@@ -34,14 +34,14 @@ include_once("init.php");
 		<div class="page-full-width cf">
 	
 			<ul id="tabs" class="fl">
-				<li><a href="dashboard.php" class="active-tab dashboard-tab">Dashboard</a></li>
-				<li><a href="view_sales.php" class="sales-tab">Sales</a></li>
-				<li><a href="view_customers.php" class=" customers-tab">Customers</a></li>
-				<li><a href="view_purchase.php" class="purchase-tab">Purchase</a></li>
-				<li><a href="view_supplier.php" class=" supplier-tab">Supplier</a></li>
-				<li><a href="view_product.php" class=" stock-tab">Stocks / Products</a></li>
-				<li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-				<li><a href="view_report.php" class="report-tab">Reports</a></li>
+				<li><a href="dashboard.php" class="active-tab dashboard-tab">Panel de control</a></li>
+				<li><a href="view_sales.php" class="sales-tab">Ventas</a></li>
+				<li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
+				<li><a href="view_purchase.php" class="purchase-tab">Compra</a></li>
+				<li><a href="view_supplier.php" class=" supplier-tab">Proveedor</a></li>
+				<li><a href="view_product.php" class=" stock-tab">Cantidad / Producto</a></li>
+				<li><a href="view_payments.php" class="payment-tab">Pagos / Importe Total</a></li>
+				<li><a href="view_report.php" class="report-tab">Reportes</a></li>
 			</ul> <!-- end tabs -->
 			
 			<!-- Change this image to your own company's logo -->
@@ -64,13 +64,13 @@ include_once("init.php");
 
 			<div class="side-menu fl">
 				
-				<h3>Quick Links</h3>
+				<h3>Enlaces rápidos</h3>
 				<ul>
-					<li><a href="add_sales.php">Add Sales</a></li>
-					<li><a href="add_purchase.php">Add Purchase</a></li>
-					<li><a href="add_supplier.php">Add Supplier</a></li>
-					<li><a href="add_customer.php">Add Customer</a></li>
-					<li><a href="view_report.php">Report</a></li>
+					<li><a href="add_sales.php">Agregar Ventas</a></li>
+					<li><a href="add_purchase.php">Agregar Compras</a></li>
+					<li><a href="add_supplier.php">Agregar Proveedor</a></li>
+					<li><a href="add_customer.php">Agregar Clientes</a></li>
+					<li><a href="view_report.php">Reportes</a></li>
 				</ul>
                                 
                                  
@@ -82,9 +82,9 @@ include_once("init.php");
 				
 					<div class="content-module-heading cf">
 					
-						<h3 class="fl">Statistics</h3>
-						<span class="fr expand-collapse-text">Click to collapse</span>
-						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
+						<h3 class="fl">Estadisticas</h3>
+						<span class="fr expand-collapse-text">Haga click para contraer</span>
+						<span class="fr expand-collapse-text initial-expand">Haga click para expander</span>
 					
 					</div> <!-- end content-module-heading -->
 					
@@ -97,7 +97,7 @@ include_once("init.php");
 									<td width="150" align="left">&nbsp;</td>
 								  </tr>
 								  <tr>
-									<td align="left">Total Number of Products</td>
+									<td align="left">Numero Total de Productos</td>
 									<td align="left"><?php echo  $count = $db->countOfAll("stock_avail");?>&nbsp;</td>
 								  </tr>
 								  <tr>
@@ -105,7 +105,7 @@ include_once("init.php");
 									<td align="left">&nbsp;</td>
 								  </tr>
 								  <tr>
-									<td align="left">Tatal Sales Transactions </td>
+									<td align="left">Transacciones de Ventas Totales </td>
 									<td align="left"><?php echo  $count = $db->countOfAll("stock_sales");?></td>
 								  </tr>
 								  <tr>
@@ -113,7 +113,7 @@ include_once("init.php");
 									<td align="left">&nbsp;</td>
 								  </tr>
 								  <tr>
-									<td align="left">Total number of Suppliers </td>
+									<td align="left">Numero Total de Proveedores </td>
 									<td align="left"><?php echo $count = $db->countOfAll("supplier_details");?></td>
 								  </tr>
 								  <tr>
@@ -121,7 +121,7 @@ include_once("init.php");
 									<td align="left">&nbsp;</td>
 								  </tr>
 								  <tr>
-									<td align="left">Total Number of Customers </td>
+									<td align="left">Numero Total de Clientes </td>
 									<td align="left"><?php echo $count = $db->countOfAll("customer_details");?></td>
 								  </tr>
 								  <tr>
@@ -137,34 +137,34 @@ include_once("init.php");
 				<table style="width:600px; margin-left:50px; float:left;" border="0" cellspacing="0" cellpadding="0">
 				  <tr>
                                       <td>&nbsp;</td>
-					<td width="250" align="left">Home (Ctrl+0) </td>
-					<td width="150" align="left">Add Purchase(Ctrl+1)</td>
+					<td width="250" align="left">Hogar (Ctrl+0) </td>
+					<td width="150" align="left">Agregar Compra(Ctrl+1)</td>
 				
                                         
 				  </tr>
 				  <tr><td>&nbsp;</td>
-                                      	<td width="250" align="left">Add Stock(Ctrl+2)</td>
-					<td align="left">Add Sale(Ctrl+3)</td>
+                                      	<td width="250" align="left">Agregar Cantidad(Ctrl+2)</td>
+					<td align="left">Agregar Venta(Ctrl+3)</td>
 					
 				  </tr>
 				  <tr><td>&nbsp;</td>
-                                      	<td align="left">Add Category (Ctrl+4 ) </td>
-					<td align="left">Add Supplier (Ctrl+5 )</td>
+                                      	<td align="left">Agregar Categoria (Ctrl+4 ) </td>
+					<td align="left">Agregar Proveedor (Ctrl+5 )</td>
 					
 				  </tr>
 				  <tr><td>&nbsp;</td>
-					<td align="left">Add Customer (Ctrl+6)</td>
-					<td align="left">View Stocks (Ctrl+7)</td>
+					<td align="left">Agregar Cliente (Ctrl+6)</td>
+					<td align="left">Ver Cantidad (Ctrl+7)</td>
 					
 				  </tr>
 				  <tr><td>&nbsp;</td>
-                                      <td align="left">View Sales(Ctrl+8)</td>
-					<td align="left">View Purchase (Ctrl+9) </td>
+                                      <td align="left">Ver Ventas(Ctrl+8)</td>
+					<td align="left">Ver Compra (Ctrl+9) </td>
 					
 				  </tr>
 				  <tr><td>&nbsp;</td>
-                                      <td align="left">Add New (Ctrl+a)</td>
-					<td align="left">Save( Ctrl+s ) </td>
+                                      <td align="left">Agregar Nuevo (Ctrl+a)</td>
+					<td align="left">Guardar( Ctrl+s ) </td>
 					
 				  </tr>
 				
@@ -200,29 +200,7 @@ include_once("init.php");
 	<div id="footer">
 	<div id="fb-root"></div>
 		
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=286371564842269";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="fb-root"></div>
-<div class="fb-like" data-href="https://www.facebook.com/posnic.point.of.sale" data-width="450" data-show-faces="true" data-send="true"></div>
-<div class="g-plusone" data-href="https://plus.google.com/u/0/107268519615804538483"></div> 
-<script type="text/javascript">
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script>
-
-
-		<p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.</p>
-	
-	</div> <!-- end footer -->
 
 </body>
 </html>

@@ -49,12 +49,12 @@ if(isset($_SESSION['username'])) {
 			},
 			messages: {
 				username: {
-					required: "Please enter a username",
-					minlength: "Your username must consist of at least 3 characters"
+					required: "Por favor, ingrese su usuario",
+					minlength: "Tu usuario debe tener al menos 3 caracteres"
 				},
 				password: {
-					required: "Please provide a password",
-					minlength: "Your password must be at least 3 characters long"
+					required: "Por favor, ingrese su contraseña",
+					minlength: "Tu contraseña debe tener al menos 3 caracteres"
 				}
 			}
 		});
@@ -91,8 +91,8 @@ if(isset($_SESSION['username'])) {
 	
 			<div id="login-intro" class="fl">
 			
-				<h1>Login to Dashboard</h1>
-				<h5>Enter your credentials below</h5>
+				<h1>Inicia sesión para Dashboard</h1>
+				<h5>Introduzca sus credenciales de abajo</h5>
 			
 			</div> <!-- login-intro -->
     
@@ -104,7 +104,6 @@ if(isset($_SESSION['username'])) {
 
 	</div> <!-- end header -->
 	
-        <h1 style="margin-left: 440px; font-family: Georgia;     font-weight: bold; font-size:20px; color: #0060BF"><a href="http://posnic.com/" target="blank">Get In Touch With Us &nbsp;&nbsp;&nbsp; <strong style="color: green">WWW.POSNIC.COM</strong></a></h1>
 	
 	<!-- MAIN CONTENT -->
 
@@ -132,42 +131,27 @@ if(isset($_SESSION['username'])) {
 				
 				</p>
 				<p>
-                                    <label>Username</label>
-                                        <input type="text" id="login-username" class="round full-width-input" placeholder="Enter Username" name="username" autofocus  />
+                                    <label>Usuario</label>
+                                        <input type="text" id="login-username" class="round full-width-input" placeholder="Ingresar Usuario" name="username" autofocus  />
 				</p>
 
 				<p>
-                                <label>Password</label>
-                                        <input type="password" id="login-password" name="password" placeholder="Enter Password" class="round full-width-input"  />
+                                <label>Contraseña</label>
+                                        <input type="password" id="login-password" name="password" placeholder="Ingresar Contraseña" class="round full-width-input"  />
 				</p>
 				
-                                <a href="forget_pass.php" class="button ">Forgot your password?</a>
+                                <a href="forget_pass.php" class="button ">¿Olvido su contraseña?</a>
 				
 				<!--<a href="dashboard.php" class="button round blue image-right ic-right-arrow">LOG IN</a>-->
-				<input type="submit" class="button round blue image-right ic-right-arrow" name="submit" value="LOG IN" />
+				<input type="submit" class="button round blue image-right ic-right-arrow" name="submit" value="Ingrese" />
 			</fieldset>
 
 			<br/>
                         
                 </form><div style="margin-left: 400px">
 				<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=286371564842269";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
-<div id="fb-root"></div>
-<div class="fb-like" data-href="https://www.facebook.com/posnic.point.of.sale" data-width="450" data-show-faces="true" data-send="true"></div>
-<div class="g-plusone" data-href="https://plus.google.com/u/0/107268519615804538483"></div> 
-<script type="text/javascript">
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script><p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.</p>
+
 		
 	</div>
 	</div> <!-- end content -->

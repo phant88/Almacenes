@@ -1,1 +1,1 @@
-<?php $config["database"] = "Integral"; $config["host"]= "localhost";$config["username"]= "homestead"; $config["password"]= "secret";?>
+<?php $config["database"] = "Integral"; $config["host"]= "192.168.1.37";$config["username"]= "homestead"; $config["password"]= "secret";?>

@@ -27,7 +27,7 @@ include_once("init.php");
 <!--
 // Nannette Thacker http://www.shiningstar.net
 function confirmSubmit(id,table,dreturn)
-{ 	     jConfirm('You Want Delete This Sales Details', 'Confirmation Dialog', function (r) {
+{ 	     jConfirm('Usted quiere eliminar este detalle de Ventas', 'Confirmación de diálogo', function (r) {
            if(r){ 
                console.log();
                 $.ajax({
@@ -36,7 +36,7 @@ function confirmSubmit(id,table,dreturn)
   			success: function(data) {
     			window.location ='view_sales.php';
     			
-                        jAlert('Sales Is Deleted', 'POSNIC');
+                        jAlert('Venta ha sido Eliminada', 'POSNIC');
   			}
 		});
             }
@@ -56,10 +56,10 @@ for (i = 0; i < field.length; i++){
 	
 }
 if (flag <1) {
-  jAlert('You must check one and only one checkbox', 'POSNIC');
+  jAlert('Usted debe marcar una y sólo una casilla', 'POSNIC');
 return false;
 }else{
- jConfirm('You Want Delete Sales', 'Confirmation Dialog', function (r) {
+ jConfirm('Usted quiere eliminar esta Venta', 'Confirmación de diálogo', function (r) {
            if(r){ 
 	
 document.deletefiles.submit();}
@@ -130,12 +130,12 @@ for (i = 0; i < field.length; i++)
 			},
 			messages: {
 				name: {
-					required: "Please enter a supplier Name",
-					minlength: "supplier must consist of at least 3 characters"
+					required: "Por favor ingrese Nombre de Proveedor",
+					minlength: "proveedor debe contener al menos 3 caracteres"
 				},
 				address: {
-					minlength: "supplier Address must be at least 3 characters long",
-					maxlength: "supplier Address must be at least 3 characters long"
+					minlength: "Direccion de Proveedor debe contener al menos 3 caracteres de largo",
+					maxlength: "Direccion de Proveedor debe contener al menos 3 caracteres de largo"
 				}
 			}
 		});
@@ -159,14 +159,14 @@ for (i = 0; i < field.length; i++)
 		<div class="page-full-width cf">
 	
 			<ul id="tabs" class="fl">
-				<li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-				<li><a href="view_sales.php" class=active-tab sales-tab">Sales</a></li>
-				<li><a href="view_customers.php" class=" customers-tab">Customers</a></li>
-				<li><a href="view_purchase.php" class=" purchase-tab">Purchase</a></li>
-				<li><a href="view_supplier.php" class=" supplier-tab">Supplier</a></li>
-				<li><a href="view_product.php" class=" stock-tab">Stocks / Products</a></li>
-				<li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-				<li><a href="view_report.php" class="report-tab">Reports</a></li>
+				<li><a href="dashboard.php" class="dashboard-tab">Panel de Control</a></li>
+				<li><a href="view_sales.php" class=active-tab sales-tab">Venta</a></li>
+				<li><a href="view_customers.php" class=" customers-tab">Cliente</a></li>
+				<li><a href="view_purchase.php" class=" purchase-tab">Compra</a></li>
+				<li><a href="view_supplier.php" class=" supplier-tab">Proveedor</a></li>
+				<li><a href="view_product.php" class=" stock-tab">Cantidad / Productos</a></li>
+				<li><a href="view_payments.php" class="payment-tab">Pagos / Importe total </a></li>
+				<li><a href="view_report.php" class="report-tab">Reportes</a></li>
 			</ul> <!-- end tabs -->
 			
 			<!-- Change this image to your own company's logo -->
@@ -188,8 +188,8 @@ for (i = 0; i < field.length; i++)
 				
 				<h3>Sales</h3>
 				<ul>
-					<li><a href="add_sales.php">Add Sales</a></li>
-					<li><a href="view_sales.php">View Sales</a></li>
+					<li><a href="add_sales.php">Agregar Venta</a></li>
+					<li><a href="view_sales.php">Vista Venta</a></li>
 					
 				</ul>
 				           <div style="background: #ffffff">
@@ -213,8 +213,8 @@ for (i = 0; i < field.length; i++)
 					<div class="content-module-heading cf">
 					
 						<h3 class="fl">Sales</h3>
-						<span class="fr expand-collapse-text">Click to collapse</span>
-						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
+						<span class="fr expand-collapse-text">Haga click para contraer</span>
+						<span class="fr expand-collapse-text initial-expand">Haga click para expandir</span>
 					
 					</div> <!-- end content-module-heading -->
 					
@@ -505,16 +505,16 @@ if(isset($_GET['limit']) && is_numeric($_GET['limit'])){
 
 ?>	
 							<tr>
-								<th>No</th>
-								<th>Stock Name</th>
-								<th>Stock Id</th>
-								<th>Date</th>							
-								<th>Customer</th>							
+								<th>N°</th>
+								<th>Nombre Producto</th>
+								<th>Codigo Producto</th>
+								<th>Día</th>							
+								<th>Cliente</th>							
 								
-								<th>Payment</th>
-								<th>Amount</th>
-								<th>Edit /Delete</th>
-                                                                <th>Select</th>
+								<th>Pagos</th>
+								<th>Cantidad</th>
+								<th>Editar /Borrar</th>
+                                                                <th>Seleccionar</th>
 							</tr>
 										
 <?php $i=1; $no=$page-1; $no=$no*$limit;	

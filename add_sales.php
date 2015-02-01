@@ -112,7 +112,7 @@ if(isset($_POST['payment'])){
 			}
 			else 
 			{
-				echo "<br><font color=green size=+1 >There is no enough stock deliver for $name1! Please add stock !</font>" ;
+				echo "<br><font color=green size=+1 >No hay cantidad suficiente para entregar $name1! Por favor Agregar cantidad !</font>" ;
 			}
 			
 			
@@ -126,7 +126,7 @@ if(isset($_POST['payment'])){
 				
                         
 			}		
-                          $msg="Sales Added successfully Ref: ". $_POST['stockid']."" ;
+                          $msg="Agregar Venta satisfactoria Ref: ". $_POST['stockid']."" ;
                           
 				
 							
@@ -264,20 +264,20 @@ $(function() {
 			},
 			messages: {
 				supplier: {
-					required: "Please Enter Supplier"					
+					required: "Por favor Ingresar Proveedor"					
 				},
 				stockid: {
-					required: "Please Enter Stock ID"
+					required: "Por favor Ingresar ID Producto"
 				},
 				payment: {
-					required: "Please Enter Payment"
+					required: "Por favor Ingresar Pago"
 				},
 				grand_total: {
-					required: "Add Stock Items"
+					required: "Agregar Cantidad de Producto"
 				},
 				bill_no: {
-					required: "Please Enter Bill Number",
-                                        minlength: "Bill Number must consist of at least 3 characters"
+					required: "Por favor Ingresar Numero de Recibo",
+                                        minlength: "Numero de Recibo debe contener mas de 3 caracteres"
 				}
 			}
 		});
@@ -332,10 +332,10 @@ function numbersonly(e){
     document.getElementById(item+'st').value=code;
     document.getElementById(item+'to').value=total;
 }else{
-     alert('No Stock Available For This Item');
+     alert('No hay este Producto disponible');
 }
 }else{
-     alert('Please Select An Item');
+     alert('Por favor Seleccione un Articulo');
     }
     }else{
     id=document.getElementById('edit_guid').value;
@@ -387,7 +387,7 @@ function numbersonly(e){
            
         }else{
            
-            alert("This Item is already added In This Purchase");
+            alert("Este Articulo esta listo para ser agregado en la compra");
             document.getElementById('item').focus();
              document.getElementById('quty').value="";
                 document.getElementById('sell').value="";
@@ -562,14 +562,14 @@ function discount_type_per(){
 		<div class="page-full-width cf">
 	
 			<ul id="tabs" class="fl">
-				<li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-				<li><a href="view_sales.php" class="active-tab  sales-tab">Sales</a></li>
-				<li><a href="view_customers.php" class=" customers-tab">Customers</a></li>
-				<li><a href="view_purchase.php" class="purchase-tab">Purchase</a></li>
-				<li><a href="view_supplier.php" class=" supplier-tab">Supplier</a></li>
-				<li><a href="view_product.php" class="stock-tab">Stocks / Products</a></li>
-				<li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-				<li><a href="view_report.php" class="report-tab">Reports</a></li>
+				<li><a href="dashboard.php" class="dashboard-tab">Panel Control</a></li>
+				<li><a href="view_sales.php" class="active-tab  sales-tab">Venta</a></li>
+				<li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
+				<li><a href="view_purchase.php" class="purchase-tab">Compra</a></li>
+				<li><a href="view_supplier.php" class=" supplier-tab">Proveedor</a></li>
+				<li><a href="view_product.php" class="stock-tab">Cantidad / Producto</a></li>
+				<li><a href="view_payments.php" class="payment-tab">Pago / Importe Total</a></li>
+				<li><a href="view_report.php" class="report-tab">Reportes</a></li>
 			</ul> <!-- end tabs -->
 			
 			<!-- Change this image to your own company's logo -->
@@ -591,8 +591,8 @@ function discount_type_per(){
 				
 				<h3>Sales Management</h3>
 				<ul>
-					<li><a href="add_sales.php">Add Sales</a></li>
-					<li><a href="view_sales.php">View Sales</a></li>
+					<li><a href="add_sales.php">Agregar Ventas</a></li>
+					<li><a href="view_sales.php">Vista Ventas</a></li>
 				</ul>
 				                                                                
 			</div> <!-- end side-menu -->
@@ -603,9 +603,9 @@ function discount_type_per(){
 				
 					<div class="content-module-heading cf">
 					
-						<h3 class="fl">Add Sales</h3>
-						<span class="fr expand-collapse-text">Click to collapse</span>
-						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
+						<h3 class="fl">Agregar Ventas</h3>
+						<span class="fr expand-collapse-text">Haga Click para contraer</span>
+						<span class="fr expand-collapse-text initial-expand">Haga Click para expandir</span>
 					
 					</div> <!-- end content-module-heading -->
 					
@@ -646,10 +646,10 @@ function discount_type_per(){
 					  $max=$max+3;
 					  $autoid="PR".$max."";
 					  ?>
-                      <td>Stock ID:</td>
+                      <td>ID Producto:</td>
                       <td><input name="stockid" type="text" id="stockid" readonly="readonly" maxlength="200"  class="round default-width-input" style="width:130px " value="<?php echo $autoid ?>" /></td>
                        
-                      <td>Date:</td>
+                      <td>Día:</td>
                       <td><input  name="date" id="test1" placeholder="" value="<?php echo date('d-m-Y');?>" type="text" id="name" maxlength="200"  class="round default-width-input"  /></td>
                       <td>&nbsp; </td>  <td>&nbsp; </td>  <td ><span class="man">*</span>Bill No:<input type="hidden"> </td> 
                       
@@ -657,13 +657,13 @@ function discount_type_per(){
                        
                     </tr>
                     <tr>  <td>&nbsp; </td> <td>&nbsp; </td>
-                      <td><span class="man">*</span>Customer:</td>
+                      <td><span class="man">*</span>Clientes:</td>
                       <td><input name="supplier" placeholder="ENTER CUSTOMER" type="text" id="supplier"  maxlength="200"  class="round default-width-input"  style="width:130px " /></td>
                        
-                      <td>Address:</td>
+                      <td>Dirección:</td>
                       <td><input name="address" placeholder="ENTER ADDRESS" type="text" id="address" maxlength="200"  class="round default-width-input"  /></td>
                        
-                       <td>&nbsp; </td> <td>&nbsp; </td> <td >contact:&nbsp; &nbsp; &nbsp; </td>
+                       <td>&nbsp; </td> <td>&nbsp; </td> <td >Contacto:&nbsp; &nbsp; &nbsp; </td>
                       <td><input name="contact" placeholder="ENTER CONTACT" type="text" id="contact1" maxlength="200"  class="round default-width-input" onkeypress="return numbersonly(event)" style="width:120px " /></td>
                        
                     </tr>
@@ -674,11 +674,11 @@ function discount_type_per(){
                         
                   <table class="form" >
                       <tr>
-                          <td>Item:</td>
-                          <td>Quantity:</td>
+                          <td>Articulo:</td>
+                          <td>Cantidad:</td>
                           
-                          <td>Price:</td>
-                          <td>Available Stock:</td>
+                          <td>Precio:</td>
+                          <td>Producto disponible:</td>
                           <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total</td>
                            <td> &nbsp;</td>
                       </tr>
@@ -713,47 +713,47 @@ function discount_type_per(){
                        <div class="mytable_row ">
                   <table class="form">
                       <tr>
-                           <td> &nbsp;</td> <td> <input type="checkbox" id="round" onclick="discount_type_per()" >Discount As Percentage</td>
+                           <td> &nbsp;</td> <td> <input type="checkbox" id="round" onclick="discount_type_per()" >Porcentaje de descuento</td>
                            <td></td> </tr>
                     <tr> 
                         <td> &nbsp;</td>
-                        <td>Discount %<input type="text" maxlength="3" disabled class="round" onkeyup=" discount_amount(); " onkeypress="return numbersonly(event);" name="discount" id="discount" >
+                        <td>Descuento %<input type="text" maxlength="3" disabled class="round" onkeyup=" discount_amount(); " onkeypress="return numbersonly(event);" name="discount" id="discount" >
                       </td>
                  
-                    <td>Discount Amount:<input type="text"  onkeypress="return numbersonly(event);"  onkeyup=" discount_as_amount(); "  class="round" id="disacount_amount" name="dis_amount" >               
+                    <td>Total de descuento:<input type="text"  onkeypress="return numbersonly(event);"  onkeyup=" discount_as_amount(); "  class="round" id="disacount_amount" name="dis_amount" >               
                       </td>
                     
-                        <td>Grand Total:<input type="hidden" readonly="readonly" id="grand_total" name="subtotal" > 
+                        <td>Total:<input type="hidden" readonly="readonly" id="grand_total" name="subtotal" > 
                         <input type="text" id="main_grand_total" readonly="readonly" class="round default-width-input"  style="text-align:right;width: 120px" >
                     </td>  <td> &nbsp;</td>
-                     <td>Description</td>
+                     <td>Descripción</td>
                   <td><textarea name="description"></textarea></td>
                   </tr> 
                       <tr> 
                         <td> &nbsp;</td>
-                        <td>Payment:<input type="text"  class="round" onkeyup=" balance_amount(); " onkeypress="return numbersonly(event);" name="payment" id="payment" >
+                        <td>Pago:<input type="text"  class="round" onkeyup=" balance_amount(); " onkeypress="return numbersonly(event);" name="payment" id="payment" >
                       </td>
                      
                       <td>Balance:<input type="text"  class="round" readonly="readonly" id="balance" name="balance" >               
                       </td>
                     
                    
-                       <td>Payable Amount:<input type="hidden" readonly="readonly" id="grand_total"  > 
+                       <td>Cantidad a pagar:<input type="hidden" readonly="readonly" id="grand_total"  > 
                         <input type="text" id="payable_amount" readonly="readonly" name="payable" class="round default-width-input"  style="text-align:right;width: 120px" >
                     </td>  <td> &nbsp;</td>  <td> &nbsp;</td>  <td> &nbsp;</td>
                   </tr> 
-                  <tr> <td>Mode &nbsp;</td><td>
+                  <tr> <td>Modo &nbsp;</td><td>
                       <select name="mode">
-                      <option value="cash">Cash</option>
+                      <option value="cash">Efectivo</option>
                       <option value="cheque">Cheque</option>                      
-                      <option value="other">Other</option>
+                      <option value="other">Otros</option>
                       </select>
                       </td>
                       <td>
-                       Due Date:<input type="text" name="duedate" id="test2" value="<?php echo date('d-m-Y');?>" class="round">
+                       Fecha de nacimiento:<input type="text" name="duedate" id="test2" value="<?php echo date('d-m-Y');?>" class="round">
                   </td>
-                 <td> Tax:<input type="text" name="tax" onkeypress="return numbersonly(event);"></td>              
-                 <td>Tax Description:<input type="text" name="tax_dis"> </td>
+                 <td> Impuesto:<input type="text" name="tax" onkeypress="return numbersonly(event);"></td>              
+                 <td>Descripción de Impuesto:<input type="text" name="tax_dis"> </td>
                  
                 
                   <td> &nbsp;</td>
@@ -784,13 +784,7 @@ function discount_type_per(){
 			
 	</div> <!-- end content -->
 	
-	
-	
-	<!-- FOOTER -->
-	<div id="footer">
-		<p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.</p>
-	
-	</div> <!-- end footer -->
+
 
 </body>
 </html>
