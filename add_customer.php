@@ -246,12 +246,13 @@ div.pagination span.current {
 			},
 			messages: {
 				name: {
-					required: "Please enter a Customer Name",
-					minlength: "Customer must consist of at least 3 characters"
+					required: "Por favor ingrese Nombre del Cliente",
+					minlength: "Cliente debe contener al menos 3 caracteres"
 				},
 				address: {
-					minlength: "Customer Address must be at least 3 characters long",
-					maxlength: "Customer Address must be at least 3 characters long"
+					minlength: "Direccion de Cliente debe contener al menos 3 caracteres de largo",
+					maxlength: "Direccion de Cliente debe contener al menos 3 caracteres de largo"
+					
 				}
 			}
 		});

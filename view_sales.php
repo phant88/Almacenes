@@ -552,11 +552,7 @@ while($row = mysql_fetch_array($result))
 				
 				
 		</div> 
-	</div> 
-		<div id="footer">
-		<p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.</p>
-	
-	</div> <!-- end footer -->
+
 
 </body>
 </html>

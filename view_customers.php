@@ -28,7 +28,7 @@ include_once("init.php");
 // Nannette Thacker http://www.shiningstar.net
 console.log();
 function confirmSubmit(id,table,dreturn)
-{ 	     jConfirm('You Want Delete Customer', 'Confirmation Dialog', function (r) {
+{ 	     jConfirm('Desea eliminar al Cliente', 'Dialogo de Confirmacion', function (r) {
            if(r){ 
                console.log();
                 $.ajax({
@@ -37,7 +37,7 @@ function confirmSubmit(id,table,dreturn)
   			success: function(data) {
     			window.location = "view_customers.php";
     			
-                        jAlert('Custmer Is Deleted', 'POSNIC');
+                        jAlert('Cliente ha sido Eliminado', 'POSNIC');
   			}
 		});
             }
@@ -58,10 +58,10 @@ for (i = 0; i < field.length; i++){
 	
 }
 if (flag <1) {
-  jAlert('You must check one and only one checkbox', 'POSNIC');
+  jAlert('Usted debe seleccionar una sola caja de cuadro', 'POSNIC');
 return false;
 }else{
- jConfirm('You Want Delete Customer', 'Confirmation Dialog', function (r) {
+ jConfirm('Desea eliminar al Cliente', 'Dialogo de confirmacion', function (r) {
            if(r){ 
 	
 document.deletefiles.submit();}
@@ -118,14 +118,14 @@ for (i = 0; i < field.length; i++)
 		<div class="page-full-width cf">
 	
 			<ul id="tabs" class="fl">
-				<li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-				<li><a href="view_sales.php" class=" sales-tab">Sales</a></li>
-				<li><a href="view_customers.php" class="active-tab customers-tab">Customers</a></li>
-				<li><a href="view_purchase.php" class="purchase-tab">Purchase</a></li>
-				<li><a href="view_supplier.php" class="  supplier-tab">Supplier</a></li>
-				<li><a href="view_product.php" class="stock-tab">Stocks / Products</a></li>
-				<li><a href="view_payments.php" class="payment-tab">Payments / Outstandings</a></li>
-				<li><a href="view_report.php" class="report-tab">Reports</a></li>
+				<li><a href="dashboard.php" class="active-tab dashboard-tab">Panel de control</a></li>
+				<li><a href="view_sales.php" class="sales-tab">Ventas</a></li>
+				<li><a href="view_customers.php" class=" customers-tab">Clientes</a></li>
+				<li><a href="view_purchase.php" class="purchase-tab">Compra</a></li>
+				<li><a href="view_supplier.php" class=" supplier-tab">Proveedor</a></li>
+				<li><a href="view_product.php" class=" stock-tab">Cantidad / Producto</a></li>
+				<li><a href="view_payments.php" class="payment-tab">Pagos / Importe Total</a></li>
+				<li><a href="view_report.php" class="report-tab">Reportes</a></li>
 			</ul> <!-- end tabs -->
 			
 			<!-- Change this image to your own company's logo -->
@@ -170,9 +170,9 @@ for (i = 0; i < field.length; i++)
 				
 					<div class="content-module-heading cf">
 					
-						<h3 class="fl">Customers</h3>
-						<span class="fr expand-collapse-text">Click to collapse</span>
-						<span class="fr expand-collapse-text initial-expand">Click to expand</span>
+						<h3 class="fl">Cliente</h3>
+						<span class="fr expand-collapse-text">Haga click para contraer</span>
+						<span class="fr expand-collapse-text initial-expand">Haga click para expander</span>
 					
 					</div> <!-- end content-module-heading -->
 					
@@ -185,7 +185,7 @@ for (i = 0; i < field.length; i++)
 &nbsp;&nbsp;<input name="Search" type="submit" class="my_button round blue   text-upper" value="Search">
 </form>
  <form action="" method="get" name="limit_go">
-    Page per Record<input name="limit" type="text" class="round my_text_box" id="search_limit" style="margin-left:5px;" value="<?php if(isset($_GET['limit'])) echo $_GET['limit']; else echo "10"; ?>" size="3" maxlength="3">
+    Página por registro<input name="limit" type="text" class="round my_text_box" id="search_limit" style="margin-left:5px;" value="<?php if(isset($_GET['limit'])) echo $_GET['limit']; else echo "10"; ?>" size="3" maxlength="3">
     <input name="go"  type="button" value="Go" class=" round blue my_button  text-upper" onclick="return confirmLimitSubmit()">
 </form>
                                             
@@ -464,11 +464,11 @@ if(isset($_GET['limit']) && is_numeric($_GET['limit'])){
 ?>	
 							<tr>
 								<th>No</th>
-								<th >Supplier Name</th>
-								<th>Contact</th>							
-								<th>Balance</th>
-								<th>Edit /Delete</th>
-                                                                <th>Select</th>
+								<th >Nombre Proveedor</th>
+								<th>Contacto</th>							
+								<th>Cantidad</th>
+								<th>Editar /Borrar</th>
+                                                                <th>Seleccionar</th>
 							</tr>
 										
 <?php $i=1; $no=$page-1; $no=$no*$limit;	while($row = mysqli_fetch_array($result)) 
@@ -498,11 +498,7 @@ if(isset($_GET['limit']) && is_numeric($_GET['limit'])){
 				
 				
 		</div> 
-	</div> 
-		<div id="footer">
-		<p>Any Queries email to <a href="mailto:sridhar.posnic@gmail.com?subject=Stock%20Management%20System">sridhar.posnic@gmail.com</a>.</p>
-	
-	</div> <!-- end footer -->
+
 
 </body>
 </html>
