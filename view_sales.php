@@ -158,16 +158,7 @@ for (i = 0; i < field.length; i++)
 		
 		<div class="page-full-width cf">
 	
-			<ul id="tabs" class="fl">
-				<li><a href="dashboard.php" class="dashboard-tab">Panel de Control</a></li>
-				<li><a href="view_sales.php" class=active-tab sales-tab">Venta</a></li>
-				<li><a href="view_customers.php" class=" customers-tab">Cliente</a></li>
-				<li><a href="view_purchase.php" class=" purchase-tab">Compra</a></li>
-				<li><a href="view_supplier.php" class=" supplier-tab">Proveedor</a></li>
-				<li><a href="view_product.php" class=" stock-tab">Cantidad / Productos</a></li>
-				<li><a href="view_payments.php" class="payment-tab">Pagos / Importe total </a></li>
-				<li><a href="view_report.php" class="report-tab">Reportes</a></li>
-			</ul> <!-- end tabs -->
+			<?php include_once("tpl/top_menu.php"); ?>
 			
 			<!-- Change this image to your own company's logo -->
 			<!-- The logo will automatically be resized to 30px height. -->
@@ -282,7 +273,7 @@ $query = "SELECT COUNT(transactionid) as num FROM stock_sales WHERE stock_name L
 }
 
 
-	$total_pages = mysql_fetch_array(mysql_query($query));
+	$total_pages = mysqli_fetch_array(mysqli_query($db->getConnection(),$query));
 
 	$total_pages = $total_pages[num];
  
@@ -323,7 +314,7 @@ if(isset($_GET['limit']) && is_numeric($_GET['limit'])){
 }
 
 
-	$result = mysql_query($sql);
+	$result = mysqli_query($db->getConnection(),$sql);
 
 	
 
@@ -518,7 +509,7 @@ if(isset($_GET['limit']) && is_numeric($_GET['limit'])){
 							</tr>
 										
 <?php $i=1; $no=$page-1; $no=$no*$limit;	
-while($row = mysql_fetch_array($result)) 
+while($row = mysqli_fetch_array($result)) 
 {
  ?> 
 	<tr>
