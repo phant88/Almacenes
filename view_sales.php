@@ -506,7 +506,7 @@ if(isset($_GET['limit']) && is_numeric($_GET['limit'])){
 ?>	
 							<tr>
 								<th>N°</th>
-								<th>Nombre Producto</th>
+								<th>Nombre Producto</th>1
 								<th>Codigo Producto</th>
 								<th>Día</th>							
 								<th>Cliente</th>							
