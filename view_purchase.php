@@ -229,7 +229,7 @@ $query = "SELECT COUNT(DISTINCT stock_id) as num FROM stock_entries WHERE stock_
 
 
 }
-	$total_pages = mysql_fetch_array(mysql_query($query));
+	$total_pages = mysqli_fetch_array(mysqli_query($db->getConnection(),$query));
 
 	$total_pages = $total_pages[num];
 
@@ -269,7 +269,7 @@ $sql = "SELECT DISTINCT(stock_id) FROM stock_entries WHERE stock_name LIKE '%".$
 
 }
 
-	$result = mysql_query($sql);
+	$result = mysqli_query($db->getConnection(),$sql);
 
 	
 
@@ -464,7 +464,7 @@ $sql = "SELECT DISTINCT(stock_id) FROM stock_entries WHERE stock_name LIKE '%".$
 										
 <?php $i=1; $no=$page-1; $no=$no*$limit;	
 
-while($row = mysql_fetch_array($result))
+while($row = mysqli_fetch_array($result))
 
 		{
 

@@ -160,7 +160,7 @@ for (i = 0; i < field.length; i++)
 	
 			<ul id="tabs" class="fl">
 				<li><a href="dashboard.php" class="dashboard-tab">Dashboard</a></li>
-				<li><a href="view_sales.php" class=active-tab sales-tab">Sales</a></li>
+				<li><a href="view_sales.php" class="active-tab sales-tab">Sales</a></li>
 				<li><a href="view_customers.php" class=" customers-tab">Customers</a></li>
 				<li><a href="view_purchase.php" class=" purchase-tab">Purchase</a></li>
 				<li><a href="view_supplier.php" class=" supplier-tab">Supplier</a></li>
@@ -282,7 +282,7 @@ $query = "SELECT COUNT(transactionid) as num FROM stock_sales WHERE stock_name L
 }
 
 
-	$total_pages = mysql_fetch_array(mysql_query($query));
+	$total_pages = mysqli_fetch_array(mysqli_query($db->getConnection(),$query));
 
 	$total_pages = $total_pages[num];
  
@@ -323,7 +323,7 @@ if(isset($_GET['limit']) && is_numeric($_GET['limit'])){
 }
 
 
-	$result = mysql_query($sql);
+	$result = mysqli_query($db->getConnection(),$sql);
 
 	
 
@@ -518,7 +518,7 @@ if(isset($_GET['limit']) && is_numeric($_GET['limit'])){
 							</tr>
 										
 <?php $i=1; $no=$page-1; $no=$no*$limit;	
-while($row = mysql_fetch_array($result)) 
+while($row = mysqli_fetch_array($result)) 
 {
  ?> 
 	<tr>
