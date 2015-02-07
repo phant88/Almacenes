@@ -26,7 +26,7 @@ include_once("init.php");
 			// Nannette Thacker http://www.shiningstar.net
 			console.log();
 			function confirmSubmit(id,table,dreturn)
-				{ 	     jConfirm('You Want Delete This Purchase ', 'Confirmation Dialog', function (r) {
+				{ 	     jConfirm('¿Deseas borrar esta compra? ', 'Dialogo de confirmación', function (r) {
 			if(r){
 			console.log();
 			$.ajax({
@@ -35,7 +35,7 @@ include_once("init.php");
 						success: function(data) {
 						window.location ='view_purchase.php';
 						
-			jAlert('Product Is Delete', 'POSNIC');
+			jAlert('Producto Borrado', 'SGA');
 						}
 					});
 			}
@@ -53,11 +53,10 @@ include_once("init.php");
 			}
 				
 			}
-			if (flag <1) {
-			jAlert('You must check one and only one checkbox', 'POSNIC');
+			if (flag <1) {'Usted debe marcar una y sólo una casilla', 'POSNIC');
 			return false;
 			}else{
-			jConfirm('You Want Delete Purchase', 'Confirmation Dialog', function (r) {
+			jConfirm('¿Deseas borrar esta compra?', 'Confirmation Dialog', function (r) {
 			if(r){
 				
 			document.deletefiles.submit();}
@@ -112,10 +111,10 @@ include_once("init.php");
 					<div id="content">							
 						<div class="page-full-width cf">
 							<div class="side-menu fl">									
-								<h3>Stock Purchase</h3>
+								<h3>Compras</h3>
 								<ul>
-									<li><a href="add_purchase.php">Add Purchase</a></li>
-									<li><a href="view_purchase.php">View Purchase </a></li>										
+									<li><a href="add_purchase.php">Agregar compras</a></li>
+									<li><a href="view_purchase.php">Ver Compras </a></li>										
 								</ul>									
 							</div> <!-- end side-menu -->									
 						
@@ -123,8 +122,8 @@ include_once("init.php");
 							<div class="content-module">											
 								<div class="content-module-heading cf">												
 											<h3 class="fl">Purchase</h3>
-											<span class="fr expand-collapse-text">Click to collapse</span>
-											<span class="fr expand-collapse-text initial-expand">Click to expand</span>												
+											<span class="fr expand-collapse-text">Click para contraer</span>
+											<span class="fr expand-collapse-text initial-expand">Click para expandir</span>												
 								</div> <!-- end content-module-heading -->												
 				
 							<div class="content-module-main cf">																										
@@ -270,9 +269,9 @@ include_once("init.php");
 											 }
 											 ?>
 											 <tr>
-												 <th>No</th>
-												 <th>Stock Id</th>
-												 <th>Stock Name</th>
+												 <th>Nro</th>
+												 <th>Compra Id</th>
+												 <th>Compra Name</th>
 												 <th>Date</th>
 												 <th>Supplier</th>
 												 <th>Amount</th>

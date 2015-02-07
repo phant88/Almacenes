@@ -148,8 +148,7 @@ if(isset($_SESSION['username'])) {
 
 			<br/>
                         
-                </form><div style="margin-left: 400px">
-				<script>(function(d, s, id) {
+               
 
 
 		

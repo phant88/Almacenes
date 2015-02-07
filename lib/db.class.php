@@ -31,7 +31,7 @@
       $this->mtStart    = $this->getMicroTime();
       $this->nbQueries  = 0;
       $this->lastResult = NULL;
-      $this->connection = mysqli_connect($server, $user, $pass,"Integral",33060);
+      $this->connection = mysqli_connect($server, $user, $pass,"posnic",33060);
      /*$myconnection =  mysql_select_db($base)              ;*/
       
       if ($this->connection==FALSE) {
@@ -64,7 +64,7 @@
     function execute($query, $debug = -1)
     {
       $this->nbQueries++;
-      mysql_query($query) or $this->debugAndDie($query);
+      mysqli_query($this->connection,$query) or $this->debugAndDie($query);
 
       $this->debug($debug, $query);
     }
